@@ -73,6 +73,11 @@
     <Folder Include="Security\" />
     <Folder Include="SalesLT\Sequences\" />
     <Folder Include="SalesLT\XMLSchemaCollections\" />
+    <Folder Include="Student_8\" />
+    <Folder Include="Student_8\Tables\" />
+    <Folder Include="Student_8\Views\" />
+    <Folder Include="Student_8\Functions\" />
+    <Folder Include="SalesLT\Functions\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\BuildVersion.sql" />
@@ -110,5 +115,17 @@
     <Build Include="SalesLT\Tables\ProductAttribute.sql" />
     <Build Include="233648\Tables\CustomerHistory.sql" />
     <Build Include="SalesLT\XMLSchemaCollections\ProductAttrsSchema.sql" />
+    <Build Include="Student_8\Tables\Employees.sql" />
+    <Build Include="Student_8\Views\v_PublicDirectory.sql" />
+    <Build Include="Student_8\Views\bestcustomers.sql" />
+    <Build Include="Student_8\Functions\ufn_CalculateTax.sql" />
+    <Build Include="Student_8\Functions\ufn_IsPriceHigherThanCurrent.sql" />
+    <Build Include="Student_8\Functions\ufn_ProductsJsonByCategory.sql" />
+    <Build Include="Student_8\Functions\ufn_GenerateBonusReport.sql" />
+    <Build Include="SalesLT\Functions\ufn_ProductPriceDiff.sql" />
+    <Build Include="Student_8\Functions\ufn_GetEmployeesByDept.sql" />
+    <Build Include="Student_8\Functions\ufn_CalcAdjustedPrices.sql" />
+    <Build Include="Student_8\Functions\ufn_GetCheaperProducts.sql" />
+    <Build Include="Security\Student_8.sql" />
   </ItemGroup>
 </Project>
