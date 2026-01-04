@@ -78,6 +78,8 @@
     <Folder Include="Student_8\Views\" />
     <Folder Include="Student_8\Functions\" />
     <Folder Include="SalesLT\Functions\" />
+    <Folder Include="M8_burliga\" />
+    <Folder Include="M8_burliga\User Defined Types\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\BuildVersion.sql" />
@@ -127,5 +129,7 @@
     <Build Include="Student_8\Functions\ufn_CalcAdjustedPrices.sql" />
     <Build Include="Student_8\Functions\ufn_GetCheaperProducts.sql" />
     <Build Include="Security\Student_8.sql" />
+    <Build Include="M8_burliga\User Defined Types\Nazwisko.sql" />
+    <Build Include="Security\M8_burliga.sql" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [M8_burliga]
+    AUTHORIZATION [dbo];
+
