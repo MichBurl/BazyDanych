@@ -80,6 +80,8 @@
     <Folder Include="SalesLT\Functions\" />
     <Folder Include="M8_burliga\" />
     <Folder Include="M8_burliga\User Defined Types\" />
+    <Folder Include="Student_8\Stored Procedures\" />
+    <Folder Include="SalesLT\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\BuildVersion.sql" />
@@ -131,5 +133,13 @@
     <Build Include="Security\Student_8.sql" />
     <Build Include="M8_burliga\User Defined Types\Nazwisko.sql" />
     <Build Include="Security\M8_burliga.sql" />
+    <Build Include="SalesLT\Tables\ProductInventory.sql" />
+    <Build Include="SalesLT\Functions\CustomerExists.sql" />
+    <Build Include="Student_8\Stored Procedures\DiscountPrice.sql" />
+    <Build Include="SalesLT\Stored Procedures\UpdateCustomerData.sql" />
+    <Build Include="SalesLT\Stored Procedures\SearchCustomers.sql" />
+    <Build Include="SalesLT\Stored Procedures\GetCustomerOrderHistory.sql" />
+    <Build Include="SalesLT\Stored Procedures\CreateCustomer.sql" />
+    <Build Include="SalesLT\Stored Procedures\AddNewProduct.sql" />
   </ItemGroup>
 </Project>
