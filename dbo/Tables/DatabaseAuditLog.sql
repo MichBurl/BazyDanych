@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[DatabaseAuditLog] (
+    [LogID]       INT            IDENTITY (1, 1) NOT NULL,
+    [EventTime]   DATETIME       DEFAULT (getdate()) NULL,
+    [LoginName]   NVARCHAR (100) NULL,
+    [EventType]   NVARCHAR (100) NULL,
+    [ObjectName]  NVARCHAR (255) NULL,
+    [CommandText] NVARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([LogID] ASC)
+);
+

@@ -82,6 +82,7 @@
     <Folder Include="M8_burliga\User Defined Types\" />
     <Folder Include="Student_8\Stored Procedures\" />
     <Folder Include="SalesLT\Stored Procedures\" />
+    <Folder Include="Database Triggers\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\BuildVersion.sql" />
@@ -141,5 +142,13 @@
     <Build Include="SalesLT\Stored Procedures\GetCustomerOrderHistory.sql" />
     <Build Include="SalesLT\Stored Procedures\CreateCustomer.sql" />
     <Build Include="SalesLT\Stored Procedures\AddNewProduct.sql" />
+    <Build Include="SalesLT\Tables\ProductPriceHistory.sql" />
+    <Build Include="SalesLT\Tables\DeletedCustomersLog.sql" />
+    <Build Include="dbo\Tables\DatabaseAuditLog.sql" />
+    <Build Include="233648\Tables\ProjectTasks.sql" />
+    <Build Include="233648\Tables\Product.sql" />
+    <Build Include="233648\Tables\PriceErrorLog.sql" />
+    <Build Include="233648\Tables\DeletedCustomersLog.sql" />
+    <Build Include="Database Triggers\trg_DatabaseAudit.sql" />
   </ItemGroup>
 </Project>

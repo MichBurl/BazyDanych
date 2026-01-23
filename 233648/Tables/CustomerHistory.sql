@@ -21,6 +21,8 @@
 
 
 
+
+
 GO
 CREATE CLUSTERED INDEX [ix_CustomerHistory]
     ON [233648].[CustomerHistory]([SysEndTime] ASC, [SysStartTime] ASC) WITH (DATA_COMPRESSION = PAGE);

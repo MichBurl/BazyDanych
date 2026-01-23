@@ -19,8 +19,9 @@
     CONSTRAINT [PK_Customer_CustomerID] PRIMARY KEY CLUSTERED ([CustomerID] ASC),
     CONSTRAINT [AK_Customer_rowguid] UNIQUE NONCLUSTERED ([rowguid] ASC),
     PERIOD FOR SYSTEM_TIME ([SysStartTime], [SysEndTime])
-)
-WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE=[233648].[CustomerHistory], DATA_CONSISTENCY_CHECK=ON));
+);
+
+
 
 
 
@@ -31,3 +32,26 @@ GO
 CREATE NONCLUSTERED INDEX [IX_Customer_EmailAddress]
     ON [233648].[Customer]([EmailAddress] ASC);
 
+
+GO
+
+-- 3. Tworzymy trigger
+CREATE   TRIGGER [233648].trg_Customer_SafeDelete
+ON [233648].Customer
+INSTEAD OF DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- A. Logujemy próbę usunięcia, jeśli klient ma zamówienia
+    INSERT INTO [233648].DeletedCustomersLog (CustomerID, FirstName, LastName)
+    SELECT d.CustomerID, d.FirstName, d.LastName
+    FROM deleted d
+    WHERE EXISTS (SELECT 1 FROM SalesLT.SalesOrderHeader soh WHERE soh.CustomerID = d.CustomerID);
+
+    -- B. Usuwamy tylko tych, którzy NIE mają zamówień
+    DELETE c
+    FROM [233648].Customer c
+    INNER JOIN deleted d ON c.CustomerID = d.CustomerID
+    WHERE NOT EXISTS (SELECT 1 FROM SalesLT.SalesOrderHeader soh WHERE soh.CustomerID = d.CustomerID);
+END;

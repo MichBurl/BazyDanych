@@ -28,3 +28,22 @@
     CONSTRAINT [AK_Product_rowguid] UNIQUE NONCLUSTERED ([rowguid] ASC)
 );
 
+
+GO
+CREATE   TRIGGER SalesLT.trg_LogProductPriceChange
+ON SalesLT.Product
+AFTER UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO SalesLT.ProductPriceHistory (ProductID, OldListPrice, NewListPrice, ChangeDate)
+    SELECT 
+        i.ProductID,
+        d.ListPrice,
+        i.ListPrice,
+        GETDATE()
+    FROM inserted i
+    JOIN deleted d ON i.ProductID = d.ProductID
+    WHERE i.ListPrice <> d.ListPrice;
+END;
