@@ -150,5 +150,8 @@
     <Build Include="233648\Tables\PriceErrorLog.sql" />
     <Build Include="233648\Tables\DeletedCustomersLog.sql" />
     <Build Include="Database Triggers\trg_DatabaseAudit.sql" />
+    <Build Include="233648\Tables\RegionalSales.sql" />
+    <Build Include="233648\Tables\QuarterlyStats.sql" />
+    <Build Include="233648\Tables\EmployeeStats.sql" />
   </ItemGroup>
 </Project>
